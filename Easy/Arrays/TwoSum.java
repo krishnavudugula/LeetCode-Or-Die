@@ -4,23 +4,35 @@ public class TwoSum {
     public static int[] twoSum(int[] nums, int target){
         //Brute-force
 
-        for(int i=0; i<nums.length; i++){
-            for(int j=i+1; j<nums.length; j++){
-                if(nums[i] + nums[j] == target){
-                    return new int[]{i,j};
-                }
-            }
+    //     for(int i=0; i<nums.length; i++){
+    //         for(int j=i+1; j<nums.length; j++){
+    //             if(nums[i] + nums[j] == target){
+    //                 return new int[]{i,j};
+    //             }
+    //         }
+    //     }
+    //     return new int[]{};
+    // }
+
+    //Optimized - HashMap
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for(int i=0; i<nums.length; i++){
+        int complement = target - nums[i];
+        if(map.containsKey(complement)) {
+            return new int[] {map.get(complement), i};
         }
-        return new int[];
+        map.put(nums[i],i);
     }
-    public static void main(String[] args) {
+    return new int[]{};
+}
+ public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] nums = new int[n];
         for(int i=0; i<n; i++){
             nums[i] = sc.nextInt();
         }
-        int target = sc.nextInt(); 
-        System.out.println(Arrays.toString(twoSum(nums, twoSum(nums, target))));
+        int target = sc.nextInt();
+        System.out.println(Arrays.toString(twoSum(nums, target)));
     }
 }
