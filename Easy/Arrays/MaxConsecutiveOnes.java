@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//485. Max Consecutive Ones
 public class MaxConsecutiveOnes {
     public static int maxOnes(int[] nums){
         int count = 0;
