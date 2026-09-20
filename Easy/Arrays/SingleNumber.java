@@ -1,5 +1,5 @@
 import java.util.*;
-
+//136. Single Number
 public class SingleNumber {
     public static int singleNumber(int[] nums){
         int result = 0;
@@ -10,7 +10,7 @@ public class SingleNumber {
         // return result;
 
         for(int num : nums){
-            result = (result & ~num);
+            result ^= num;
         }
         return result;
     }
