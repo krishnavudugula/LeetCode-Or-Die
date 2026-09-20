@@ -3,8 +3,8 @@ import java.util.*;
 public class ProductofArrayExceptSelf {
     public static int[] productExceptSelf(int[] nums){
         int n = nums.length;
-        int LSA[] = new int[n];
-        int RSA[] = new int[n];
+        int LSA[] = new int[n]; //Prefix - Left Sub Array
+        int RSA[] = new int[n]; //Suffix - Right Sub Array
         int[] res = new int[n];
         LSA[0] = 1;
         RSA[n-1] = 1;
