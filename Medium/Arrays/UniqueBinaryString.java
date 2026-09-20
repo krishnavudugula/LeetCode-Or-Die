@@ -5,14 +5,14 @@ public class UniqueBinaryString {
         StringBuilder s = new StringBuilder();
 
         for(int i=0; i<nums.length; i++){
-            if(nums[i].charAt(i) == '0'){
+            if(nums[i].charAt(i) == '0'){  //Diagonals Check
                 s.append('1');
             }
             else {
                 s.append('0');
             }
         }
-        return s.toString();
+        return s.toString(); //StringBuilder to String format
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
