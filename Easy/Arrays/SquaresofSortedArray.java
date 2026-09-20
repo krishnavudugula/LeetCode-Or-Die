@@ -1,4 +1,4 @@
-//977. Squares of a Sorted Array
+//977. Squares of a Sorted Array - Input : Sorted, O/p : Sorted
 import java.util.*;
 public class SquaresofSortedArray {
     public static int[] squareofArray(int[] nums){
@@ -14,7 +14,7 @@ public class SquaresofSortedArray {
 
         int left = 0;
         int right = n - 1;
-        for(int i=n-1; i>=0; i--){
+        for(int i=n-1; i>=0; i--){ //TC : n
             int leftSquare = nums[left] * nums[left];
             int rightSquare = nums[right] * nums[right];
 
