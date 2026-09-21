@@ -21,7 +21,7 @@ public class FindMin {
                 left = mid + 1;
             }
             else {
-                right = mid;
+                right = mid; //That means the portion from mid to right is sorted. But the minimum could actually be nums[mid].
             }
         }
         return nums[left]; //TC : O(logn)
