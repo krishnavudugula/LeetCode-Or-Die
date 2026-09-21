@@ -15,15 +15,16 @@ public class FindMin {
         int right = m - 1;
 
         while(left < right){
-            int mid = ( left + right ) / 2; //But java int can only hold up to : 2,147,483,647.
+            //int mid = ( left + right ) / 2; But java int can only hold up to : 2,147,483,647.
+            int mid = left + (right - left) / 2; //To avoid int overflow.
             if(nums[mid] > nums[right]) {
                 left = mid + 1;
             }
             else {
-                right = mid - 1;
+                right = mid;
             }
         }
-        return nums[left];
+        return nums[left]; //TC : O(logn)
 
     }
     public static void main(String[] args) {
