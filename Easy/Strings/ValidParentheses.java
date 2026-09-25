@@ -33,6 +33,6 @@ public class ValidParentheses {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
 
-        System.out.println(validParantheses(s));
+        System.out.println(validParentheses(s));
     }
 }
