@@ -17,7 +17,7 @@ public class FirstUnqCharinaStr {
         for(int i=0; i<s.length(); i++){
             char ch = s.charAt(i);
 
-            if(check.get(i) == 1) {
+            if(check.get(ch) == 1) {
                 return i;
             }
         }
