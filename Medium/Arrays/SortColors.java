@@ -41,32 +41,59 @@ public class SortColors {
 
 
         //Two-way partitioning
-        int left = 0;
-        int right = nums.length - 1;
-        int i = 0;
+        // int left = 0;
+        // int right = nums.length - 1;
+        // int i = 0;
 
-        while (i <= right) {
-            if (nums[i] == 0) {
-                int temp = nums[left];
-                nums[left] = nums[i];
-                nums[i] = temp;
+        // while (i <= right) {
+        //     if (nums[i] == 0) {
+        //         int temp = nums[left];
+        //         nums[left] = nums[i];
+        //         nums[i] = temp;
 
-                left++;
-                i++;
+        //         left++;
+        //         i++;
+        //     }
+        //     else if (nums[i] == 2) {
+        //         int temp = nums[right];
+        //         nums[right] = nums[i];
+        //         nums[i] = temp;
+
+        //         right--;
+
+        //         // Do not increment i here!
+        //         // The swapped-in value is unexamined.
+        //     }
+        //     else {
+        //         // nums[i] == 1
+        //         i++;
+        //     }
+        // }
+
+
+        //Approach 4 - Dutch National Flag
+        int low = 0;
+        int mid = 0;
+        int high = nums.length -1;
+
+        while(mid <= high){
+            if(nums[mid] == 0){
+                int temp = nums[low];
+                nums[low] = nums[mid];
+                nums[mid] = temp;
+
+                low++;
+                mid++;
             }
-            else if (nums[i] == 2) {
-                int temp = nums[right];
-                nums[right] = nums[i];
-                nums[i] = temp;
-
-                right--;
-
-                // Do not increment i here!
-                // The swapped-in value is unexamined.
+            else if(nums[mid] == 1){
+                mid++;
             }
             else {
-                // nums[i] == 1
-                i++;
+                int temp = nums[mid];
+                nums[mid] = nums[low];
+                nums[low] = temp;
+
+                high--;
             }
         }
     }
