@@ -6,37 +6,68 @@ public class SortColors {
 
 
         //Approach 2: Counting Sort
-        int zeros = 0;
-        int ones = 0;
-        int twos = 0;
+        // int zeros = 0;
+        // int ones = 0;
+        // int twos = 0;
 
-        for(int i=0; i<nums.length; i++){ //or for(int num: nums){ if(num == 0)}
-            if(nums[i] == 0){
-                zeros++;
+        // for(int i=0; i<nums.length; i++){ //or for(int num: nums){ if(num == 0)}
+        //     if(nums[i] == 0){
+        //         zeros++;
+        //     }
+        //     else if(nums[i] == 1){
+        //         ones++;
+        //     }
+        //     else {
+        //         twos++;
+        //     }
+        // }
+
+        // int index = 0;
+
+        // while(zeros > 0){
+        //     nums[index++] = 0;
+        //     zeros--; 
+        // }
+
+        // while(ones > 0){
+        //     nums[index++] = 1;
+        //     ones--;
+        // }
+
+        // while(twos > 0){
+        //     nums[index++] = 2;
+        //     twos--;
+        // }
+
+
+        //Two-way partitioning
+        int left = 0;
+        int right = nums.length - 1;
+        int i = 0;
+
+        while (i <= right) {
+            if (nums[i] == 0) {
+                int temp = nums[left];
+                nums[left] = nums[i];
+                nums[i] = temp;
+
+                left++;
+                i++;
             }
-            else if(nums[i] == 1){
-                ones++;
+            else if (nums[i] == 2) {
+                int temp = nums[right];
+                nums[right] = nums[i];
+                nums[i] = temp;
+
+                right--;
+
+                // Do not increment i here!
+                // The swapped-in value is unexamined.
             }
             else {
-                twos++;
+                // nums[i] == 1
+                i++;
             }
-        }
-
-        int index = 0;
-
-        while(zeros > 0){
-            nums[index++] = 0;
-            zeros--; 
-        }
-
-        while(ones > 0){
-            nums[index++] = 1;
-            ones--;
-        }
-
-        while(twos > 0){
-            nums[index++] = 2;
-            twos--;
         }
     }
 }
