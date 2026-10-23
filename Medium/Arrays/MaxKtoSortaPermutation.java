@@ -1,6 +1,4 @@
 //3644. Maximum K to Sort a Permutation
-
-
 public class MaxKtoSortaPermutation {
     public int sortPermutation(int[] nums) {
         int ans = -1;
