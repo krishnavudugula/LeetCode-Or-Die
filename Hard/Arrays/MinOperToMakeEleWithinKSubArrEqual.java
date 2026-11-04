@@ -3,7 +3,6 @@
 import java.util.Arrays;
 import java.util.TreeMap;
 public class MinOperToMakeEleWithinKSubArrEqual {
-    
     class WindowMedian {
         TreeMap<Integer, Integer> low = new TreeMap<>();
         TreeMap<Integer, Integer> high = new TreeMap<>();
