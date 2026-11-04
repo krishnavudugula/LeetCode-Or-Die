@@ -2,7 +2,6 @@
 
 import java.util.Arrays;
 import java.util.TreeMap;
-
 public class MinOperToMakeEleWithinKSubArrEqual {
     
     class WindowMedian {
